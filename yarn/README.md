@@ -1,3 +1,3 @@
 # yarn
 
-This action installs based on the yarn.lock file all neccesary dependencies.
+This action installs all necessary dependencies based on the cached yarn.lock file.
