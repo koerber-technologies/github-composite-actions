@@ -1,0 +1,16 @@
+name: Install yarn dependencies
+description: Install and cache yarn dependencies
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ./node_modules
+        key: node-modules-${{ hashFiles('yarn.lock') }}
+    - name: Install dependencies
+      shell: bash
+      run: |
+        yarn install --frozen-lockfile
