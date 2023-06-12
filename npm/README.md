@@ -1,6 +1,6 @@
 # npm
 
-> Use this action for installing dependencies with npm and caching for 
+> Use this action for installing dependencies with npm and caching for
 > `node_modules`.
 
 This action installs all necessary dependencies based on the `package.json`
