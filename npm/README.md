@@ -1,10 +1,10 @@
-# yarn
+# npm
 
-> Use this action for installing dependencies with yarn and for
-> caching `node_modules`.
+> Use this action for installing dependencies with npm and caching for
+> `node_modules`.
 
 This action installs all necessary dependencies based on the `package.json`
-file using [yarn](https://yarnpkg.com). It will also cache the
+file using [npm](https://npmjs.com). It will also cache the
 `node_modules` folder.
 
 ## Used Actions
@@ -17,6 +17,6 @@ file using [yarn](https://yarnpkg.com). It will also cache the
 Add the following snippet to your workflow.
 
 ```yaml
-- name: Install dependencies with yarn and cache node modules
-  uses: koerber-technologies/github-composite-actions/yarn@main
+- name: Install dependencies with npm and cache node modules
+  uses: koerber-technologies/github-composite-actions/npm@main
 ```

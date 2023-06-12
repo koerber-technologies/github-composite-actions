@@ -8,3 +8,6 @@ You can reference the `action.yaml` files in your workflow like this:
   uses: koerber-technologies/github-composite-actions/yarn@develop
 ```
 
+Checking out the repository is a standard behaviour of the composite actions.
+
+- List github actions website
