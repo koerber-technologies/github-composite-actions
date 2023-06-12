@@ -1,0 +1,12 @@
+{
+  "name": "github-composite-actions",
+  "version": "1.0.0",
+  "repository": "git@github.com:koerber-technologies/github-composite-actions.git",
+  "scripts": {
+    "lint": "markdownlint-cli2 '**/*.md' '#node_modules'"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "markdownlint-cli2": "^0.8.1"
+  }
+}

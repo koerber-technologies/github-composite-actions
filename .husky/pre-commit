@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+project_dir=$(eval pwd)
+markdown_files=$(find "$project_dir" -type f -name "**/*.md")
+
+for file in $markdown_files; do
+  if [ -n "$(git status --porcelain "$file")" ]; then
+    yarn run lint
+  fi
+done
