@@ -1,0 +1,16 @@
+name: Install npm dependencies
+description: Install and cache npm dependencies
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ./node_modules
+        key: node-modules-${{ hashFiles('package-lock.json') }}
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm ci
