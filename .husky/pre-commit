@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Set the project directory where markdown files are located
+project_dir=$(eval pwd)
+
+# Find all markdown files within the project directory
+markdown_files=$(find "$project_dir" -type f -name "**/*.md")
+
+# Loop through each markdown file and check for modifications
+for file in $markdown_files; do
+    # Check if the file has been modified
+    if [ -n "$(git status --porcelain "$file")" ]; then
+        echo "File '$file' has been modified."
+        yarn run lint
+    fi
+done
