@@ -1,0 +1,14 @@
+name: Checkout repository
+description: Checkout repository
+inputs:
+  fetch-depth:
+    description: Number of commits to fetch
+    required: false
+    default: "1"
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      with:
+        fetch-depth: ${{ inputs.fetch-depth }}
