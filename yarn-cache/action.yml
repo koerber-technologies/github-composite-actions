@@ -8,6 +8,10 @@ inputs:
     description: An explicit key for a cache entry
     required: false
     default: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+outputs:
+  cache-hit:
+    description: A possible cache entry
+    value: ${{ steps.yarn-cache.outputs.cache-hit }}
 runs:
   using: composite
   steps:
